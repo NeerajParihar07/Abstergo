@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+inline int mul(int a, int b) { return (a * b) % M; };
+inline int add(int a, int b)
+{
+      int res = a + b;
+      if ( res < 0 ) res += M;
+      if ( res >= M) res -= M;
+      return res;
+}
+]]></content>
+<tabTrigger>mod_add</tabTrigger>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

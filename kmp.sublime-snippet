@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+void kmp()
+{
+    loop(i,1,virus.length())//change virus
+    {
+        int j = lps[i-1];
+        while(j > 0 && virus[j] != virus[i])j = lps[j-1];
+        if(virus[i] == virus[j])j++;
+        lps[i] = j;
+    }
+
+    loop(k,0,26)
+    {
+        char ch = 'A' + k;
+        loop(i,0,virus.length()+1)
+        {
+            int j = i;
+            if(i == virus.length())j = lps[j-1];
+            while(j > 0 && virus[j] != ch)j = lps[j-1];
+            if(virus[j] == ch)j++;
+            np[i][k] = j;
+        }
+    }
+}
+]]></content>
+<tabTrigger>kmp</tabTrigger>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
